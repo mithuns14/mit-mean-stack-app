@@ -48,6 +48,11 @@ app.get('*',(req,res)=>{
     res.sendfile(path.join(__dirname,'public/index.html'));
 })
 
+app.get('/postAPI',(req,res)=>{
+    console.log(req.body);
+    res.send({"status":"success"});
+});
+
 app.listen(port,()=>{
     console.log('Server listening to '+port);
 });
