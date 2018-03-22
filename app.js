@@ -48,9 +48,14 @@ app.get('*',(req,res)=>{
     res.sendfile(path.join(__dirname,'public/index.html'));
 })
 
-app.get('/postAPI',(req,res)=>{
+app.get('/getAPI',(req,res)=>{
     console.log(req.body);
-    res.send({"status":"success"});
+    res.send({"status":"success","mode":"get"});
+});
+
+app.post('/postAPI',(req,res)=>{
+    console.log(req.body);
+    res.send({"status":"success","mode":"post"});
 });
 
 app.listen(port,()=>{
